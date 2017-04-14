@@ -1,0 +1,30 @@
+[alias]
+  b = branch
+  ba = branch --all
+  co = checkout
+  d = diff
+  dc = diff --cached
+  l = log --abbrev-commit --date=iso --graph --pretty=format:'%C(red)%h %C(yellow)%d%C(green)%cd %C(blue)%cn\n%C(reset)%s\n'
+  lv = log --name-status --abbrev-commit --date=iso --graph --pretty=format:'%C(red)%h %C(yellow)%d%C(green)%cd %C(blue)%cn\n%C(reset)%s\n'
+  s = status --branch --short
+  delete-merged-branches = !git branch --merged | grep -v \\* | xargs -I % git branch -d %
+
+[color]
+  ui = true
+
+[user]
+  useConfigOnly = true
+  name = 
+  email = 
+
+[core]
+  excludesfile = ~/.gitignore-global
+
+[merge]
+  ff = false
+[pull]
+  ff = only
+[push]
+  default = current
+[fetch]
+  prune = true
